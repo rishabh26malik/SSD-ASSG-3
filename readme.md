@@ -9,8 +9,8 @@
 
 **2.)** 
 - First dates are processed to get it to a generalized form.
-- Days befor first date are calculed since 00/00/0000 ... (1)
-- Days before second date are calculed  ... (2)
+- Days before first date are calculed since 00/00/0000 ... (1)
+- Days before second date are calculated since 00/00/0000  ... (2)
 - ANSWER = abs ( (1) - (2) ) 
 
 **3.)** 
