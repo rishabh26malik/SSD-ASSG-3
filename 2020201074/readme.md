@@ -21,3 +21,5 @@
 - Algorithm is a modification of merge algorithm of merge sort.
 - **If dates are not same in 2 files, then "NO FREE SLOT IS AVAILABLE"**
 - **In output, slot duration is displayed as floating number, like 0.5 instead of 1/2**
+
+**GITHUB LINK - ** https://github.com/rishabh26malik/SSD-ASSG-3

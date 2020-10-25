@@ -12,6 +12,7 @@
 - Days before first date are calculed since 00/00/0000 ... (1)
 - Days before second date are calculated since 00/00/0000  ... (2)
 - ANSWER = abs ( (1) - (2) ) 
+- **Single digit cannot be used, 0 has to be appended before it. Like for 7th, use 07th, for 7/8/2020 use 07/08/2020**
 
 **3.)** 
 - File is read in a string
@@ -22,4 +23,4 @@
 - **If dates are not same in 2 files, then "NO FREE SLOT IS AVAILABLE"**
 - **In output, slot duration is displayed as floating number, like 0.5 instead of 1/2**
 
-**GITHUB LINK - ** https://github.com/rishabh26malik/SSD-ASSG-3
+**GITHUB LINK -** https://github.com/rishabh26malik/SSD-ASSG-3
