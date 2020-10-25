@@ -12,18 +12,35 @@ for i in range(1,n):
 		parent[j['name']]=j['parent']
 parent[data['L0'][0]['name']]='-1'
 level[data['L0'][0]['name']]=0
+#print(parent)
+#print(level)
+
+root=data['L0'][0]['name']
 a=input()
 b=input()
 aa=a
 bb=b
+
+if(root==a or root==b):
+	print("NO LEADER")
+	exit()
+aa=[]
+bb=[]
+aa.insert(0,a)
+aa.insert(0,b)
 while(parent[a]!="-1"):
-	aa=parent[a]+aa
+	aa.insert(0,parent[a])
+	#aa=parent[a]+aa
 	a=parent[a]
+
 while(parent[b]!="-1"):
-	bb=parent[b]+bb
+	bb.insert(0,parent[b])
+	#aa=parent[a]+aa
 	b=parent[b]
-#print(aa,bb)
+
 lca=aa[0]
+#print(aa)
+#print(bb)
 i=0
 j=0
 n=len(aa)
@@ -33,3 +50,4 @@ while(i<n and j<m and aa[i]==bb[j]):
 	i+=1
 	j+=1
 print(lca)
+print("level of leader - ",level[lca])
