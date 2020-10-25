@@ -9,9 +9,9 @@
 
 **2.)** 
 - First dates are processed to get it to a generalized form.
-- Days after first date(exclusive) are calculed in that year ... (1)
-- Days before second date(exclusive) are calculed in that year ... (2)
-- ANSWER = (1) + (2) + #Days in years between the years of 2 dates
+- Days befor first date are calculed since 00/00/0000 ... (1)
+- Days before second date are calculed  ... (2)
+- ANSWER = abs ( (1) - (2) ) 
 
 **3.)** 
 - File is read in a string
