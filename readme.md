@@ -41,4 +41,4 @@
 - **In output, slot duration is displayed as floating number, like 0.5 instead of 1/2**
 - **Same alogorithm is applied this time as well. Only difference is of using different data structures in it.**
 
-**Github link -**https://github.com/rishabh26malik/SSD-ASSG-3
+ **Github link -** https://github.com/rishabh26malik/SSD-ASSG-3
