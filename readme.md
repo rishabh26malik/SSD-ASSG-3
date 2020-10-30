@@ -21,6 +21,7 @@
 
 **3.)** 
 **DIFFERENCES**
+- Run program as `python3 q3.py Employee1.txt Employee2.txt` You can give any number of filenames as the command line argumnets. **All files should be in same folder as the program**
 - Filenames are given as command line arguments
 - Information is stored in different manner, 1D and 2D lists are used this time for all kind of intermediate and final information needed to solve the problem
 - `sys` library is used for command line arguments
