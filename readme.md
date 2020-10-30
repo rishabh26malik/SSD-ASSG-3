@@ -1,4 +1,4 @@
-### SSD Assignment-2
+### SSD Assignment-3-A
 **1.)**
 - Used `json` library for reading json file
 - Stored information in json in 2 python dictionaries
