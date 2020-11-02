@@ -13,7 +13,16 @@
 
 **2.)** 
 **DIFFERENCES**
-- Only `processDate()` method is updated. `(line 61-65)`
+- **Command line input can be any of the following -**
+mm/dd/yyyy
+mm-dd-yyyy
+mm.dd.yyyy
+dd/mm/yyyy
+dd-mm-yyyy
+dd.mm.yyyy
+**If no command line input is given then following is the format of date - 10th Sep,2020  or  10th September,2020**
+- Only `processDate()` method is updated. 
+- Separate date processing methods are used as per the command line input
 
 **STILL SAME**
 - `daysbefore()` and `isLeap()`functions are unchanged.
@@ -21,8 +30,8 @@
 
 **3.)** 
 **DIFFERENCES**
-- Run program as `python3 q3.py Employee1.txt Employee2.txt` You can give any number of filenames as the command line argumnets. **All files should be in same folder as the program**
-- Filenames are given as command line arguments
+- All files are stored as `.txt` files in a folder named `emp` in the same directory as the programs. 
+- `os` and `glob` library is used to list of all input files from `emp` folder
 - Information is stored in different manner, 1D and 2D lists are used this time for all kind of intermediate and final information needed to solve the problem
 - `sys` library is used for command line arguments
 - `isDateSame()` is updated to handle any number of data `(line 4-14)`

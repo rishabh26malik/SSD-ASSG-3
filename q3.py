@@ -1,5 +1,7 @@
 import json
 import sys
+import os
+import glob
 
 def isDateSame(Data):
 	dates={}
@@ -74,13 +76,21 @@ def getName(data):
 	#print(tmp)
 	return tmp[0][2:-1]
 
-n=len(sys.argv)
+empFiles=[]
+os.chdir("./emp")
+for file in glob.glob("*.txt"):
+    empFiles.append(file)
+print(empFiles)
+
+n=len(empFiles)
+#n=len(sys.argv)
 freeMin=[]
 available=[]
 free=[]
 Emp=[]
-for i in range(1,n):
-	a=open(sys.argv[i], 'r').read()
+for i in range(0,n):
+	#a=open(sys.argv[i], 'r').read()
+	a=open(empFiles[i], 'r').read()
 	a=a.replace("\n","")
 	#print(a)
 	free1=process(a)
@@ -102,6 +112,16 @@ for i in range(1,n):
 	name=getName(a)
 	emp1=name+": ["+Emp1+"]\n"
 	Emp.append(emp1)
+for i in Emp:
+	print(i)
+print("-----------")
+for i in available:
+	print(i)
+print("-----------")
+for i in freeMin:
+	print(i)
+print("-----------")
+
 
 f = open("output.txt", "w")
 f.write("Available slot\n")
