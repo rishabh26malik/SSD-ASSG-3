@@ -1,3 +1,5 @@
+import sys
+
 days=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 months = {
   "Jan": 1,   "Feb": 2,
@@ -42,13 +44,16 @@ def daysBefore(DD,MM,YY):
 	if(isLeap(YY)==True and MM > 2):
 		days_count+=1
 	return days_count
-'''
+
 def processDate(date):
+	'''
 	if(len(date)==10):
 		DD=int(date[0:2])
 		MM=int(date[3:5])
 		YY=int(date[6:10])
-	elif(len(date)==14):
+	el
+	'''
+	if(len(date)==14):
 		DD=int(date[0:2])
 		MM=months[date[5:8]]
 		YY=int(date[10:14])
@@ -57,15 +62,22 @@ def processDate(date):
 		MM=int(months[date[5:8]])
 		YY=int(date[-4:])
 	return [DD,MM,YY]
-'''
-def processDate(date):
+
+def processDate_mm_dd_yyyy(date):
 	MM=int(date[0:2])
 	DD=int(date[3:5])
 	YY=int(date[6:10])
 	return [DD,MM,YY]
 
+def processDate_dd_mm_yyyy(date):
+	DD=int(date[0:2])
+	MM=int(date[3:5])
+	YY=int(date[6:10])
+	return [DD,MM,YY]
 
 dates=[]
+
+
 
 
 file = open('date_calculator.txt', 'r') 
@@ -75,14 +87,26 @@ for line in file:
 	dates.append(line)
 	
 file.close()
+
 date1=dates[0][7:]
 date2=dates[1][7:]
 #print(date1, date2)
 
 #date1=input()
 #date2=input()
-a=processDate(date1)
-b=processDate(date2)
+
+n=len(sys.argv)
+if(n==1):
+	a=processDate(date1)
+	b=processDate(date2)
+else:
+	if(sys.argv[1][0]=='m'):
+		a=processDate_mm_dd_yyyy(date1)
+		b=processDate_mm_dd_yyyy(date2)
+	else:
+		a=processDate_dd_mm_yyyy(date1)
+		b=processDate_dd_mm_yyyy(date2)
+
 print(a)
 print(b)
 DD1=a[0]
