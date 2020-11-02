@@ -13,13 +13,13 @@
 
 **2.)** 
 **DIFFERENCES**
-- **Command line input can be any of the following -**
-mm/dd/yyyy
-mm-dd-yyyy
-mm.dd.yyyy
-dd/mm/yyyy
-dd-mm-yyyy
-dd.mm.yyyy
+- **Command line input can be any of the following -**\
+mm/dd/yyyy\
+mm-dd-yyyy\
+mm.dd.yyyy\
+dd/mm/yyyy\
+dd-mm-yyyy\
+dd.mm.yyyy\
 **If no command line input is given then following is the format of date - 10th Sep,2020  or  10th September,2020**
 - Only `processDate()` method is updated. 
 - Separate date processing methods are used as per the command line input
