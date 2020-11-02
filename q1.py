@@ -19,8 +19,11 @@ root=data['L0'][0]['name']
 
 paths=[]
 str=input()
-elements=str.split(' ')
-m=len(elements)
+tmp=str.split(' ')
+m=int(tmp[0])
+elements=tmp[1:]
+#elements=str.split(' ')
+#m=len(elements)
 for element in elements:
 	a=element
 	aa=a
@@ -54,8 +57,8 @@ for i in range(0,n):
 		break
 		
 lca=prev
-print("LEADER - ",lca)
+print("common leader: ",lca)
 
-print("level of leader - ",level[lca])
+#print("level leader - ",level[lca])
 for ele in elements:
-	print("level of ",ele," - ",level[ele])
+	print("leader",lca,"is",level[ele]-level[lca],"level above employee",ele)
