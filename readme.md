@@ -30,7 +30,8 @@ dd.mm.yyyy\
 
 **3.)** 
 **DIFFERENCES**
-- All files are stored as `.txt` files in a folder named `emp` in the same directory as the programs. 
+- All files are stored as `.txt` files in a folder named `emp` in the same directory as the programs. **Folder name does not matter.**
+- **There is only 1 folder in current directory which has all input files.**
 - `output.txt` file will be created in the folder `emp`
 - `os` and `glob` library is used to list of all input files from `emp` folder
 - Information is stored in different manner, 1D and 2D lists are used this time for all kind of intermediate and final information needed to solve the problem

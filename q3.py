@@ -78,7 +78,14 @@ def getName(data):
 	return tmp[0][2:-1]
 
 empFiles=[]
-os.chdir("./emp")
+#print(os.listdir("."))
+#print(type((os.listdir("."))))
+
+d='.'
+folder = list(filter(lambda x: os.path.isdir(os.path.join(d, x)), os.listdir(d)))
+print(folder)
+os.chdir(folder[0])
+
 for file in glob.glob("*.txt"):
     empFiles.append(file)
 #print(empFiles)
