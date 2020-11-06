@@ -31,6 +31,7 @@ dd.mm.yyyy\
 **3.)** 
 **DIFFERENCES**
 - All files are stored as `.txt` files in a folder named `emp` in the same directory as the programs. 
+- `output.txt` file will be created in the folder `emp`
 - `os` and `glob` library is used to list of all input files from `emp` folder
 - Information is stored in different manner, 1D and 2D lists are used this time for all kind of intermediate and final information needed to solve the problem
 - `sys` library is used for command line arguments

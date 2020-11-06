@@ -15,7 +15,7 @@ def isDateSame(Data):
 		return date1
 	return "False"	
 
-
+	'''
 	emp1=a.split(':')
 	emp2=b.split(':')
 	date1=emp1[1][3:-1]
@@ -24,6 +24,7 @@ def isDateSame(Data):
 	if(date1!=date2):
 		return "False"
 	return date1
+	'''
 
 def process(empData):
 	empData=empData.replace(" ","")
@@ -80,7 +81,7 @@ empFiles=[]
 os.chdir("./emp")
 for file in glob.glob("*.txt"):
     empFiles.append(file)
-print(empFiles)
+#print(empFiles)
 
 n=len(empFiles)
 #n=len(sys.argv)
@@ -112,6 +113,7 @@ for i in range(0,n):
 	name=getName(a)
 	emp1=name+": ["+Emp1+"]\n"
 	Emp.append(emp1)
+'''
 for i in Emp:
 	print(i)
 print("-----------")
@@ -121,7 +123,7 @@ print("-----------")
 for i in freeMin:
 	print(i)
 print("-----------")
-
+'''
 
 f = open("output.txt", "w")
 f.write("Available slot\n")
