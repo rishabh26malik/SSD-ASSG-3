@@ -1,39 +1,38 @@
 ### SSD Assignment-2
 
-<p align="center">
-  <img src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-260nw-789676552.jpg" width="350" title="hover text">
-</p>
-
 **1)**
+<img src="./q1.jpeg">
 radon cc q1.py -a -na\
 q1.py\
     F 33:0 solve - B\
     F 18:0 process - A\
-    F 4:0 readFile - A\
+    F 4:0 readFile - A
 
 3 blocks (classes, functions, methods) analyzed.\
-Average complexity: A (4.333333333333333)\
+Average complexity: A (4.333333333333333)
 
 **2)**
+<img src="./q2.jpeg">
 radon cc q2.py -a -na\
 q2.py\
     F 25:0 daysBefore - B\
     F 18:0 isLeap - A\
-    F 61:0 processDate - A\
+    F 61:0 processDate - A
 
 3 blocks (classes, functions, methods) analyzed.\
-Average complexity: A (4.0)\
+Average complexity: A (4.0)
 
 **3)**
+<img src="./q2.jpeg">
 radon cc q3.py -a -na\
 q3.py\
     F 48:0 inMin - B\
     F 26:0 process - A\
     F 4:0 isDateSame - A\
-    F 72:0 getName - A\
+    F 72:0 getName - A
 
 4 blocks (classes, functions, methods) analyzed.\
-Average complexity: A (4.0)\
+Average complexity: A (4.0)
 
 **Question 2 and 3 are unchanged.**
 
