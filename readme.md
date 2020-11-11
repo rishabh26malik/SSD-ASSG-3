@@ -1,12 +1,15 @@
 ### SSD Assignment-2
 
 **1)**
+
 <img src="./q1.jpeg">
 
 **2)**
+
 <img src="./q2.jpeg">
 
 **3)**
+
 <img src="./q2.jpeg">
 
 **Question 2 and 3 are unchanged.**
