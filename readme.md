@@ -1,5 +1,9 @@
 ### SSD Assignment-2
 
+<p align="center">
+  <img src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-260nw-789676552.jpg" width="350" title="hover text">
+</p>
+
 **1)**
 radon cc q1.py -a -na\
 q1.py\
