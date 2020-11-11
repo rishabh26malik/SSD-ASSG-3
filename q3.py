@@ -1,6 +1,19 @@
 import json
+import sys
 
-def isDateSame(a,b):
+def isDateSame(Data):
+	dates={}
+	n=len(Data)
+	for i in range(1,n):
+		a=open(Data[i]).read()
+		emp1=a.split(':')	
+		date1=emp1[1][3:-1]
+		dates[date1]=1
+	if(len(dates)==1):
+		return date1
+	return "False"	
+
+
 	emp1=a.split(':')
 	emp2=b.split(':')
 	date1=emp1[1][3:-1]
@@ -56,96 +69,109 @@ def inMin(free):
 		freeMin.append([start,end])
 	return freeMin
 
-#a="{'Employee1': {'5/10/2020':['10:00AM - 11:00AM', '12:30PM - 1:00PM', '4:00PM - 5:00PM']}}"
-#b="{'Employee2': {'5/10/2020':['10:30AM - 11:30AM', '12:00PM - 1:00PM', '1:00PM - 1:30PM','3:30PM - 4:30PM']}}"
-a = open('Employee1.txt', 'r').read()
-b = open('Employee2.txt', 'r').read()
-#print(a)
-a=a.replace("\n","")
-b=b.replace("\n","")
+def getName(data):
+	tmp=data.split(':')
+	#print(tmp)
+	return tmp[0][2:-1]
 
-slotLength=float(input())
-free1=process(a)
-free2=process(b)
-#print(free1)
-#print(free2)
-freeMin1=inMin(free1)
-freeMin2=inMin(free2)
-#print(freeMin1)
-#print(freeMin2)
+n=len(sys.argv)
+freeMin=[]
+available=[]
+free=[]
+Emp=[]
+for i in range(1,n):
+	a=open(sys.argv[i], 'r').read()
+	a=a.replace("\n","")
+	#print(a)
+	free1=process(a)
+	free.append(free1)
+	available_1=[]
+	freeMin1=inMin(free1)
+	freeMin.append(freeMin1)
 
-available_1=[]
-available_2=[]
-for slot in free1:
-	tmp=slot[0][0]+"-"+slot[1][0]
-	available_1.append(tmp)
-for slot in free2:
-	tmp=slot[0][0]+"-"+slot[1][0]
-	available_2.append(tmp)
-#print(available_1)
-#print(available_2)
+	for slot in free1:
+		tmp=slot[0][0]+"-"+slot[1][0]
+		available_1.append(tmp)
+	available.append(available_1)
 
-ava1=[]
-ava2=[]
-for it in available_1:
-	ava1.append("'"+it+"'")
-for it in available_2:
-	ava2.append("'"+it+"'")
-Emp1=", ".join(ava1)	
-emp1="Employee1: ["+Emp1+"]\n"
-#print(emp1)
-Emp2=", ".join(ava2)	
-emp2="Employee2: ["+Emp2+"]\n"
-#print(emp2)
-#freeSlot=startIdx[0]+" - "+endTime
-#out="{'"+check+"' : ['"+freeSlot+"']}\n"
+	ava1=[]
+	
+	for it in available_1:
+		ava1.append("'"+it+"'")
+	Emp1=", ".join(ava1)	
+	name=getName(a)
+	emp1=name+": ["+Emp1+"]\n"
+	Emp.append(emp1)
 
 f = open("output.txt", "w")
 f.write("Available slot\n")
-f.write(emp1)
-f.write(emp2)
+for i in Emp:
+	f.write(i)
+slotLength=float(input())
+check=isDateSame(sys.argv)
 
-
-check=isDateSame(a,b)
 if(check!="False"):
-	n=len(freeMin1)
-	m=len(freeMin2)
-	i=0
-	j=0
-	startIdx="-"
+	
+	end=0
+	index=[0]*(n-1)
+	#print(index)
+	flag=0
 	slotDur=0
 	ans=0
 	slotLength*=60
-	while(i<n and j<m):
-		start=max(freeMin1[i][0], freeMin2[j][0])
-		startIdx=free1[i][0] if(freeMin1[i][0] > freeMin2[j][0]) else free2[j][0]
+	m=n-1
+	startIdx="-"
+	while(True):
+		
+		for i in range(0,m):
+			if(index[i]>=len(freeMin[i])):
+				flag=1
+				break
+		if(flag==1):
+			break
+		start=0
+		for i in range(0,m):
+			if(start < freeMin[i][index[i]][0]):
+				start=freeMin[i][index[i]][0]
+				startIdx=[i,index[i]]
 		slotDur=start+slotLength
-		if(	slotDur<=freeMin1[i][1] and slotDur<=freeMin2[j][1] ):
-			end=slotDur
+		flag1=1
+		for i in range(0,m):
+			if(	slotDur > freeMin[i][index[i]][1]):
+				flag1=0
+				break
+		if(flag1==1):
+			end=int(slotDur)
 			ans=1
 			break
 
-		if(slotDur > freeMin1[i][1]):
-			i+=1
-		if(slotDur > freeMin2[j][1]):
-			j+=1
-	slotDur=int(slotDur)
-	#print(startIdx,start, slotDur, ans)
+		for i in range(0,m):
+			if(slotDur > freeMin[i][index[i]][1]):
+				index[i]+=1
+		
+		slotDur=int(slotDur)
 	HH=int(slotDur//60)
 	MM=int(slotDur%60)
+	if(MM<10):
+		MM="0"+str(MM)
+	MM=str(MM)
 	if(HH<12):
-		endTime=str(HH)+":"+str(MM)+"AM"
+		endTime=str(HH)+":"+(MM)+"AM"
 	elif(HH==12):
-		endTime=str(HH)+":"+str(MM)+"PM"
+		endTime=str(HH)+":"+(MM)+"PM"
 	else:
 		HH=HH-12
-		endTime=str(HH)+":"+str(MM)+"PM"
-	freeSlot=startIdx[0]+" - "+endTime
+		endTime=str(HH)+":"+(MM)+"PM"
+	freeSlot=free[startIdx[0]][startIdx[1]][0][0]+" - "+endTime
 	out="{'"+check+"' : ['"+freeSlot+"']}\n"
 	slotPrint="Slot Duration:"+str(float(slotLength/60))+" hour\n"
-	f.write(slotPrint)
-	f.write(out)
+
+	if(ans==1):
+		f.write(slotPrint)
+		f.write(out)
+	else:
+		f.write("No free slot available")
 else:
-	#print("No free slot available")
 	f.write("No free slot available")
 f.close()
+

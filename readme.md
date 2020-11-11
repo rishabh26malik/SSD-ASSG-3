@@ -1,26 +1,38 @@
-### SSD Assignment-3-A
-**1.)**
-- Used `json` library for reading json file
-- Stored information in json in 2 python dictionaries
-- One stores the `child-parent` relationship as key-value pair, other stores `node-level number` as key-value pair
-- For finding common leader, I stored path to parent for both nodes in 2 strings. 
-- Last common character in 2 string from `left` is the common leader
-- **Assumption - Root is assumed to have no parent. So if any of the 2 inputs is root, then no solution is possible in that case.**
+### SSD Assignment-2
 
-**2.)** 
-- First dates are processed to get it to a generalized form.
-- Days before first date are calculed since 00/00/0000 ... (1)
-- Days before second date are calculated since 00/00/0000  ... (2)
-- ANSWER = abs ( (1) - (2) ) 
-- **Single digit cannot be used, 0 has to be appended before it. Like for 7th, use 07th, for 7/8/2020 use 07/08/2020**
+**1)**
+radon cc q1.py -a -na
+q1.py
+    F 33:0 solve - B
+    F 18:0 process - A
+    F 4:0 readFile - A
 
-**3.)** 
-- File is read in a string
-- String is processed to extract date and busy time slots.
-- Free time slots are calculated for each employee
-- **ALL free time slots are converted to minutes and then algorithm is performed.**
-- Algorithm is a modification of merge algorithm of merge sort.
-- **If dates are not same in 2 files, then "NO FREE SLOT IS AVAILABLE"**
-- **In output, slot duration is displayed as floating number, like 0.5 instead of 1/2**
+3 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.333333333333333)
 
-**GITHUB LINK -** https://github.com/rishabh26malik/SSD-ASSG-3
+**2)**
+radon cc q2.py -a -na
+q2.py
+    F 25:0 daysBefore - B
+    F 18:0 isLeap - A
+    F 61:0 processDate - A
+
+3 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.0)
+
+**3)**
+radon cc q3.py -a -na
+q3.py
+    F 48:0 inMin - B
+    F 26:0 process - A
+    F 4:0 isDateSame - A
+    F 72:0 getName - A
+
+4 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.0)
+
+**Question 2 and 3 are unchanged.**
+
+Question 1 is updated. Code is now made modular using functions. 3 separated function are made of the existing code. Nothing is changed in the code. It's just divided into functions. 
+
+**Github link -**https://github.com/rishabh26malik/SSD-ASSG-3

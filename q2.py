@@ -42,7 +42,7 @@ def daysBefore(DD,MM,YY):
 	if(isLeap(YY)==True and MM > 2):
 		days_count+=1
 	return days_count
-
+'''
 def processDate(date):
 	if(len(date)==10):
 		DD=int(date[0:2])
@@ -57,6 +57,13 @@ def processDate(date):
 		MM=int(months[date[5:8]])
 		YY=int(date[-4:])
 	return [DD,MM,YY]
+'''
+def processDate(date):
+	MM=int(date[0:2])
+	DD=int(date[3:5])
+	YY=int(date[6:10])
+	return [DD,MM,YY]
+
 
 dates=[]
 
@@ -76,6 +83,8 @@ date2=dates[1][7:]
 #date2=input()
 a=processDate(date1)
 b=processDate(date2)
+print(a)
+print(b)
 DD1=a[0]
 MM1=a[1]
 YY1=a[2]
